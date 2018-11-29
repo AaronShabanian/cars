@@ -12,7 +12,7 @@
  
  1977:Plymouth:Roadrunner
  
- If the user adds in a 2016 Honda Accord the new list would be:
+ If Someone inputs a 2016 Honda Accord the result would be:
 
  1948:Ford:sedan
  
