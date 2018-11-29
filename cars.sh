@@ -2,20 +2,35 @@
 #cars.sh
 #Aaron Shabanian
 
-echo "My Old Cars Inventory System"
-echo "___________________________"
-echo "1. Enter a new car"
-echo "2. List all current cars"
-echo "Q. Quit the program"
-echo "____________________________"
-read input
-while "$input" -ne "0"
-case "$input" in
-	"1") echo "Enter the year of the car"
-		read yr
-		echo "What is the make of the car"
-		read make
-		echo "What is the model of the car"
-		read model
-		echo "$yr:$make:$model" >> My_old_cars
+stop="no"
+
+while [ continue="no" ]
+do
+echo "1. Enter car"
+echo "2. Show list of cars"
+echo "Q. Quit"
+
+
+read INPUT 
+
+case $INPUT in
+	1) echo "Enter in car year: "
+	   read YEAR 
+	   echo "Enter in the make of the car: "
+	   read MAKE 
+	   echo "Enter the model of the car: "
+	   read MODEL
+	   echo "$YEAR $MAKE $MODEL">>My_old_cars
+	   ;;
+
+	2) sort My_old_cars
+	;;
+
+	Q) echo "Goodbye"
+	   stop="yes"
+	   break 
+	   ;;
+esac
+
+done 
 
